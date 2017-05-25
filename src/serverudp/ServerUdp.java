@@ -63,9 +63,9 @@ public class ServerUdp {
             Statement stmt = conex.createStatement();
 
             String sql;
-            sql = "INSERT INTO coordenadas (id, x, y, comentario) VALUES (NULL, 3, 4, 'dfsg')";
-            ResultSet rs = stmt.executeQuery(sql);
-System.out.println(rs);
+            sql = "INSERT INTO coordenadas ( x, y, comentario) VALUES ( 3, 4, 'dfsg')";
+            stmt.execute(sql);
+//System.out.println(rs);
             System.out.println("RECEIVED: " + sentence);
             InetAddress IPAddress = receivePacket.getAddress();
             int port = receivePacket.getPort();

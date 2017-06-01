@@ -55,15 +55,30 @@ public class ServerUdp {
             String sentence = new String(receivePacket.getData());
             String[] fragmento = sentence.split(",");
 
-            for (int i = 0; i < fragmento.length; i++) {
-                System.out.println(i + ": " + fragmento[i]);
-            }
+//            for (int i = 0; i < fragmento.length; i++) {
+//                System.out.println(i + ": " + fragmento[i]);
+//            }
             Connection conex = obtener();
 
             Statement stmt = conex.createStatement();
 
+            Float a1 = Float.valueOf(fragmento[2]);
+            Float a2 = Float.valueOf(fragmento[4]);
+            
+            int b1 = a1.intValue();
+            int b2 = a2.intValue();
+         
+            float c1 = a1 - (b1*100);
+            float c2 = a2 - (b2*100);
+
+            float d1 = c1/60;
+            float d2 = c1/60;
+      
+            float e1 = -(b1+d1);
+            float e2 = -(b2+d2);
+
             String sql;
-            sql = "INSERT INTO coordenadas ( x, y, comentario) VALUES ( "+fragmento[2]+", "+fragmento[4]+", '"+fragmento[0]+"')";
+            sql = "INSERT INTO coordenadas ( x, y, comentario) VALUES ( "+e1+", "+e2+", '"+fragmento[0]+"')";
             stmt.execute(sql);
 //System.out.println(rs);
             System.out.println("RECEIVED: " + sentence);

@@ -78,8 +78,8 @@ public class ServerUdp {
             float d2 = c2 / 60;
             System.out.println(d1 + "-d-" + d2);
 
-            float e1 = -(b1 + d1);
-            float e2 = -(b2 + d2);
+            float e1 = (b1 + d1);
+            float e2 = (b2 + d2);
             System.out.println(e1 + "-e-" + e2);
 
             String sql;

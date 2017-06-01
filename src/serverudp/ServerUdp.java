@@ -62,12 +62,12 @@ public class ServerUdp {
 
             Statement stmt = conex.createStatement();
 
-            Float a1 = Float.valueOf(fragmento[2])/100;
-            Float a2 = Float.valueOf(fragmento[4])/100;
+            Float a1 = Float.valueOf(fragmento[2]);
+            Float a2 = Float.valueOf(fragmento[4]);
 
             System.out.println(a1 + "-a-" + a2);
-            int b1 = a1.intValue();
-            int b2 = a2.intValue();
+            int b1 = a1.intValue()/100;
+            int b2 = a2.intValue()/100;
 
             System.out.println(b1 + "-b-" + b2);
             float c1 = a1.intValue() - (b1 * 100);

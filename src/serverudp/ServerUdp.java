@@ -45,7 +45,7 @@ public class ServerUdp {
         }
     }
 
-    public static void main(String[] args) throws Exception{
+    public static void main(String[] args) throws Exception {
         DatagramSocket serverSocket = new DatagramSocket(9876);
         byte[] receiveData = new byte[1024];
         byte[] sendData = new byte[1024];
@@ -64,21 +64,26 @@ public class ServerUdp {
 
             Float a1 = Float.valueOf(fragmento[2]);
             Float a2 = Float.valueOf(fragmento[4]);
-            
+
+            System.out.println(a1 + "-a-" + a2);
             int b1 = a1.intValue();
             int b2 = a2.intValue();
-         
-            float c1 = a1 - (b1*100);
-            float c2 = a2 - (b2*100);
 
-            float d1 = c1/60;
-            float d2 = c1/60;
-      
-            float e1 = -(b1+d1);
-            float e2 = -(b2+d2);
+            System.out.println(b1 + "-b-" + b2);
+            float c1 = a1 - (b1 * 100);
+            float c2 = a2 - (b2 * 100);
+
+            System.out.println(c1 + "-c-" + c2);
+            float d1 = c1 / 60;
+            float d2 = c2 / 60;
+            System.out.println(d1 + "-d-" + d2);
+
+            float e1 = -(b1 + d1);
+            float e2 = -(b2 + d2);
+            System.out.println(e1 + "-e-" + e2);
 
             String sql;
-            sql = "INSERT INTO coordenadas ( x, y, comentario) VALUES ( "+e1+", "+e2+", '"+fragmento[0]+"')";
+            sql = "INSERT INTO coordenadas ( x, y, comentario) VALUES ( " + e1 + ", " + e2 + ", '" + fragmento[0] + "')";
             stmt.execute(sql);
 //System.out.println(rs);
             System.out.println("RECEIVED: " + sentence);

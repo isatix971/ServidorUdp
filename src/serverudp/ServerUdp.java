@@ -83,7 +83,7 @@ public class ServerUdp {
             System.out.println(e1 + "-e-" + e2);
 
             String sql;
-            sql = "INSERT INTO coordenadas ( x, y, comentario) VALUES ( " + e1 + ", " + e2 + ", '" + fragmento[0] + "')";
+            sql = "INSERT INTO coordenadas ( x, y, comentario) VALUES ( " + e2 + ", " + e1 + ", '" + fragmento[0] + "')";
             stmt.execute(sql);
 //System.out.println(rs);
             System.out.println("RECEIVED: " + sentence);

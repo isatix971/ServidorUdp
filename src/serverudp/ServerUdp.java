@@ -70,8 +70,8 @@ public class ServerUdp {
             int b2 = a2.intValue();
 
             System.out.println(b1 + "-b-" + b2);
-            float c1 = a1 - (b1 * 100);
-            float c2 = a2 - (b2 * 100);
+            float c1 = a1.intValue() - (b1 * 100);
+            float c2 = a2.intValue() - (b2 * 100);
 
             System.out.println(c1 + "-c-" + c2);
             float d1 = c1 / 60;
